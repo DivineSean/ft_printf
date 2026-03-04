@@ -15,17 +15,9 @@
 int	ft_putnbr_base(unsigned long nb, char *base, int print_return)
 {
 	unsigned long	len;
-	unsigned long	i;
 
-	i = 0;
 	len = ft_strlen(base);
-	if (nb < 0)
-	{
-		print_return = ft_putchar('-', print_return);
-		nb = -nb;
-		print_return = ft_putnbr_base(nb, base, print_return);
-	}
-	else if (nb >= len)
+	if (nb >= len)
 	{
 		print_return = ft_putnbr_base(nb / len, base, print_return);
 		print_return = ft_putnbr_base(nb % len, base, print_return);
